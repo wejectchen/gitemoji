@@ -22,7 +22,7 @@
 
 截图来自([carloscuesta/gitmoji: An emoji guide for your commit messages. 😜 (github.com)](https://github.com/carloscuesta/gitmoji))
 
-![github-emoji](/Volumes/WorkSpace/Projects/git-emoji-user-guide/images/github-emoji.png)
+![github-emoji](https://gitee.com/wejectchan/git-emoji-user-guide/raw/master/images/github-emoji.png))
 
 
 
