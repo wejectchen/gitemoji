@@ -1,0 +1,54 @@
+<template>
+    <Header></Header>
+    <el-main>
+        <Main></Main>
+    </el-main>
+
+    <div class="footer">
+        <p style="margin: 6px;">Made With ❤️ By wejectchan</p>
+        <p style="margin: 6px;">
+            <el-link
+                href="https://github.com/carloscuesta/gitmoji"
+                :underline="false"
+                target="_blank"
+                type="info"
+            >Fork from gitmoji@github under the MIT license</el-link>
+        </p>
+        <p style="margin: 6px;">
+            <el-link
+                href="https://github.com/hooj0/git-emoji-guide"
+                :underline="false"
+                target="_blank"
+                type="info"
+            >Translate by hooj0/git-emoji-guide@github under the Apache License 2.0</el-link>
+        </p>
+    </div>
+</template>
+
+<script>
+
+import Main from '../components/Main.vue'
+import Header from '../components/Header.vue'
+
+export default {
+    comments: { Main, Header },
+
+}
+</script>
+
+<style>
+.el-main {
+    z-index: 2;
+    padding: 0;
+    width: 100%;
+    min-height: 700px;
+}
+
+.footer {
+    background-color: #464646;
+    color: var(--el-text-color-primary);
+    line-height: 30px;
+    text-align: center;
+    color: aliceblue;
+}
+</style>
