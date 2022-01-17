@@ -45,7 +45,7 @@ export default [
     emoji: '📝',
     entity: '#x1f4dd;',
     code: ':memo:',
-    description: '增加或更新文档.',
+    description: '增加或更新文档-readme/doc.',
     name: 'memo',
   },
   {
