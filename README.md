@@ -1,8 +1,13 @@
+# 详情点击
+
+制作了一个搜索 git 常用 emoji 的网站，体验更好。有需求可以收藏网站，方便使用
+[点我进入网站](https://wejectchan.gitee.io/git-emoji-user-guide/#/)
+
 # **从一次有趣的对话开始**
 
 某天和朋友聚餐，途中谈到在`git`提交信息使用`emoji`的话题，引起了大家浓厚兴趣。
 
-在我接触的项目中，git提交规则大多按约定执行，这些约定往往写在了开发手册中（大多数和版本升级规则一并约定），但几乎没有对`emoji`的使用进行约定。
+在我接触的项目中，git 提交规则大多按约定执行，这些约定往往写在了开发手册中（大多数和版本升级规则一并约定），但几乎没有对`emoji`的使用进行约定。
 
 于是，回家后开始研究，原来`github`上还真有一个项目，提倡在`git`提交中使用`emoji`。
 
@@ -16,15 +21,11 @@
 3. 较为美观
 ```
 
-
-
 ## 什么效果？
 
 截图来自([carloscuesta/gitmoji: An emoji guide for your commit messages. 😜 (github.com)](https://github.com/carloscuesta/gitmoji))
 
 ![github-emoji](https://gitee.com/wejectchan/git-emoji-user-guide/raw/master/images/github-emoji.png)
-
-
 
 ## 如何使用？
 
@@ -41,13 +42,11 @@ git commit -m ':emoji_code: any commit messages(iusse)'
 git commit -m ':tada: first commit'
 ```
 
+# git emoji 索引表
 
+这里提供了一份 git emoji 索引对照表
 
-# git emoji索引表
-
-这里提供了一份git emoji索引对照表
-
-中文翻译来自[hooj0/git-emoji-guide: :pencil2: git commit emoji guide Git提交注释使用表情指北 ](https://github.com/hooj0/git-emoji-guide)[License:Apache License 2.0]
+中文翻译来自[hooj0/git-emoji-guide: :pencil2: git commit emoji guide Git 提交注释使用表情指北 ](https://github.com/hooj0/git-emoji-guide)[License:Apache License 2.0]
 
 --**PS:善用搜索。**--
 
