@@ -38,29 +38,28 @@
 </template>
 
 <script>
-import axios from 'axios'
+import emoji from '../assets/emoji'
+
 export default {
     data() {
         return {
-            emoji: [],
+            emoji,
             searchData: ""
         }
     },
     created() {
-        this.getEmojiData()
+        // this.getEmojiData()
     },
     methods: {
-        async getEmojiData() {
-            const { data: res } = await axios.get('data/emoji.json')
-            this.emoji = res.emoji_data
-        },
+        // async getEmojiData() {
+        //     const { data: res } = await axios.get('data/emoji.json')
+        //     this.emoji = res.emoji_data
+        // },
 
-        gotogitee() {
-            router.push('https://gitee.com/wejectchan/git-emoji-user-guide')
-        },
         getColor() {
             return 'background-color:' + this.generateMixed(6)
         },
+
         generateMixed(n) {
             var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
             var res = "#";
@@ -71,6 +70,7 @@ export default {
             }
             return res;
         },
+
         onCopy() {
             ElMessage({
                 showClose: true,
