@@ -15,5 +15,4 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
-  base: '/git-emoji-user-guide/',
 })
