@@ -1,6 +1,7 @@
 # 详情点击
 
-制作了一个搜索 git 常用 emoji 的网站，体验更好。有需求可以收藏网站，方便使用
+制作了一个搜索 git 常用 emoji 的网站，体验更好。有需求可以收藏网站，方便使用。
+
 [点我进入网站](https://wejectchan.gitee.io/git-emoji-user-guide/#/)
 
 # **从一次有趣的对话开始**
