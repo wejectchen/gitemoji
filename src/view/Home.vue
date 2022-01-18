@@ -25,15 +25,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
 
 import Main from '../components/Main.vue'
 import Header from '../components/Header.vue'
 
-export default {
-    comments: { Main, Header },
-
-}
 </script>
 
 <style>

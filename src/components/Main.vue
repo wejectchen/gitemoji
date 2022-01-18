@@ -19,7 +19,7 @@
                 v-clipboard:copy="item.emoji"
                 v-clipboard:success="onCopy"
                 shadow="always"
-                v-for="(item, index) in emoji"
+                v-for="(item, index) in emojiList"
                 :key="index"
             >
                 <div class="cardleft" :style="getColor()">
@@ -37,29 +37,15 @@
 </template>
 
 <script>
+
+import { ref } from 'vue'
 import emoji from '../assets/emoji'
 
+
 export default {
-    data() {
-        return {
-            emoji,
-            searchData: ""
-        }
-    },
-    created() {
-        // this.getEmojiData()
-    },
-    methods: {
-        // async getEmojiData() {
-        //     const { data: res } = await axios.get('data/emoji.json')
-        //     this.emoji = res.emoji_data
-        // },
-
-        getColor() {
-            return 'background-color:' + this.generateMixed(6)
-        },
-
-        generateMixed(n) {
+    setup() {
+        const emojiList = ref(emoji)
+        const generateMixed = (n) => {
             var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
             var res = "#";
             var id;
@@ -68,9 +54,12 @@ export default {
                 res += chars[id];
             }
             return res;
-        },
+        }
+        const getColor = function () {
+            return 'background-color:' + generateMixed(6)
+        }
 
-        onCopy() {
+        const onCopy = () => {
             ElMessage({
                 showClose: true,
                 message: '已成功复制该表情，快去使用吧～～',
@@ -79,13 +68,25 @@ export default {
             })
 
         }
+
+        return {
+            emojiList,
+            getColor,
+            onCopy
+        }
+    },
+
+    data() {
+        return {
+            searchData: ''
+        }
     },
     computed: {
         emoji() {
             const input = this.searchData
             if (input) {
                 return this.emoji.filter(data => {
-                    // return Object.keys(data)        
+                    // return Object.keys(data)
                     return Object.keys(data).some(key => {
                         return String(data[key]).toLowerCase().indexOf(input) > -1
                     })
@@ -95,6 +96,60 @@ export default {
         }
     },
 }
+
+
+
+// export default {
+//     data() {
+//         return {
+//             emoji,
+//             searchData: ""
+//         }
+//     },
+
+//     methods: {
+
+
+//         getColor() {
+//             return 'background-color:' + this.generateMixed(6)
+//         },
+
+//         generateMixed(n) {
+//             var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+//             var res = "#";
+//             var id;
+//             for (var i = 0; i < n; i++) {
+//                 id = Math.floor(Math.random() * 16);
+//                 res += chars[id];
+//             }
+//             return res;
+//         },
+
+//         onCopy() {
+//             ElMessage({
+//                 showClose: true,
+//                 message: '已成功复制该表情，快去使用吧～～',
+//                 type: 'success',
+//                 center: true,
+//             })
+
+//         }
+//     },
+//     computed: {
+//         emoji() {
+//             const input = this.searchData
+//             if (input) {
+//                 return this.emoji.filter(data => {
+//                     // return Object.keys(data)
+//                     return Object.keys(data).some(key => {
+//                         return String(data[key]).toLowerCase().indexOf(input) > -1
+//                     })
+//                 })
+//             }
+//             return this.emoji
+//         }
+//     },
+// }
 </script>
 
 <style>

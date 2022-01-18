@@ -1,9 +1,11 @@
 <template>
-  <router-view />
+  <Home></Home>
 </template>
-<script>
 
+<script setup>
+import Home from './view/Home.vue'
 </script>
+
 <style>
 @import url("./assets/css/style.css");
 </style>
