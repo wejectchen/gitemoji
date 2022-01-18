@@ -156,6 +156,7 @@ export default {
 }
 
 .mainBox {
+    background-color: #ddeef7;
     display: flex;
     justify-content: center;
     flex-direction: row;
