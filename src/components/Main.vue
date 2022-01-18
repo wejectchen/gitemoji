@@ -3,7 +3,7 @@
         <div class="searchBox">
             <el-input
                 v-model="searchData"
-                :input="searchEmoji"
+                class="searchBar"
                 clearable
                 size="large"
                 suffix-icon="Search"
@@ -56,7 +56,7 @@
 <script>
 
 import { ref, computed } from 'vue'
-import emoji from '../assets/emoji'
+import emoji from '../data/emoji'
 
 
 export default {
@@ -108,11 +108,29 @@ export default {
     --el-color-primary: #464646;
 }
 
+.mainContainer {
+    background-color: #ddeef7;
+}
+
 .searchBox {
     padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.searchBar {
+    max-width: 800px;
+}
+
+.el-input__inner {
+    height: 55px !important;
+    color: #090909;
+    border-radius: 0.5em;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
 .el-card {
@@ -123,6 +141,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .el-card__body {
