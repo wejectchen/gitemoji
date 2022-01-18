@@ -5,13 +5,9 @@
                 v-model="searchData"
                 :input="searchEmoji"
                 clearable
-                maxlength="50"
-                style="width: 800px"
                 size="large"
-                class="w-50 m-2"
                 suffix-icon="Search"
                 placeholder="输入查找emoji"
-                :suffix-icon="Search"
             ></el-input>
         </div>
 
@@ -90,7 +86,6 @@ export default {
 
         const searchData = ref('')
         const searchEmoji = computed(() => {
-            console.log('searchEmoji: ', searchEmoji.value);
             return emoji.filter(
                 emoji => emoji.name.includes(searchData.value) || emoji.description.includes(searchData.value)
             )
@@ -106,59 +101,6 @@ export default {
     },
 }
 
-
-
-// export default {
-//     data() {
-//         return {
-//             emoji,
-//             searchData: ""
-//         }
-//     },
-
-//     methods: {
-
-
-//         getColor() {
-//             return 'background-color:' + this.generateMixed(6)
-//         },
-
-//         generateMixed(n) {
-//             var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-//             var res = "#";
-//             var id;
-//             for (var i = 0; i < n; i++) {
-//                 id = Math.floor(Math.random() * 16);
-//                 res += chars[id];
-//             }
-//             return res;
-//         },
-
-//         onCopy() {
-//             ElMessage({
-//                 showClose: true,
-//                 message: '已成功复制该表情，快去使用吧～～',
-//                 type: 'success',
-//                 center: true,
-//             })
-
-//         }
-//     },
-//     computed: {
-//         emoji() {
-//             const input = this.searchData
-//             if (input) {
-//                 return this.emoji.filter(data => {
-//                     // return Object.keys(data)
-//                     return Object.keys(data).some(key => {
-//                         return String(data[key]).toLowerCase().indexOf(input) > -1
-//                     })
-//                 })
-//             }
-//             return this.emoji
-//         }
-//     },
-// }
 </script>
 
 <style>
@@ -171,15 +113,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.el-input {
-    height: 20px;
-}
-
-.el-input__inner {
-    height: 20px;
-    color: #000;
 }
 
 .el-card {
