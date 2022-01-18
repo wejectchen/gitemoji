@@ -3,6 +3,7 @@
         <div class="searchBox">
             <el-input
                 v-model="searchData"
+                :input="searchEmoji"
                 clearable
                 maxlength="50"
                 style="width: 800px"
@@ -14,7 +15,7 @@
             ></el-input>
         </div>
 
-        <div class="mainBox">
+        <div class="mainBox" v-if="!searchEmoji">
             <el-card
                 v-clipboard:copy="item.emoji"
                 v-clipboard:success="onCopy"
@@ -33,12 +34,32 @@
                 </div>
             </el-card>
         </div>
+
+        <div class="mainBox" v-else>
+            <el-card
+                v-clipboard:copy="item.emoji"
+                v-clipboard:success="onCopy"
+                shadow="always"
+                v-for="(item, index) in searchEmoji"
+                :key="index"
+            >
+                <div class="cardleft" :style="getColor()">
+                    <div class="emoji">{{ item.emoji }}</div>
+                </div>
+                <div class="cardright">
+                    <div class="desc">
+                        <p style="margin:12px;" class="desc_title">{{ item.code }}</p>
+                        <p style="margin:12px ;" class="desc_desc">{{ item.description }}</p>
+                    </div>
+                </div>
+            </el-card>
+        </div>
     </div>
 </template>
 
 <script>
 
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import emoji from '../assets/emoji'
 
 
@@ -58,7 +79,6 @@ export default {
         const getColor = function () {
             return 'background-color:' + generateMixed(6)
         }
-
         const onCopy = () => {
             ElMessage({
                 showClose: true,
@@ -66,33 +86,22 @@ export default {
                 type: 'success',
                 center: true,
             })
-
         }
+
+        const searchData = ref('')
+        const searchEmoji = computed(() => {
+            console.log('searchEmoji: ', searchEmoji.value);
+            return emoji.filter(
+                emoji => emoji.name.includes(searchData.value)
+            )
+        })
 
         return {
             emojiList,
             getColor,
-            onCopy
-        }
-    },
-
-    data() {
-        return {
-            searchData: ''
-        }
-    },
-    computed: {
-        emoji() {
-            const input = this.searchData
-            if (input) {
-                return this.emoji.filter(data => {
-                    // return Object.keys(data)
-                    return Object.keys(data).some(key => {
-                        return String(data[key]).toLowerCase().indexOf(input) > -1
-                    })
-                })
-            }
-            return this.emoji
+            onCopy,
+            searchData,
+            searchEmoji
         }
     },
 }
