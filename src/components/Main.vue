@@ -18,7 +18,7 @@
             <el-card
                 v-clipboard:copy="item.emoji"
                 v-clipboard:success="onCopy"
-                shadow="hover"
+                shadow="always"
                 v-for="(item, index) in emoji"
                 :key="index"
             >
@@ -26,10 +26,9 @@
                     <div class="emoji">{{ item.emoji }}</div>
                 </div>
                 <div class="cardright">
-                    <div class="boxLine"></div>
                     <div class="desc">
-                        <p style="padding: 0 !important;" class="desc_title">{{ item.code }}</p>
-                        <p style="padding: 0 !important;" class="desc_desc">{{ item.description }}</p>
+                        <p style="margin:12px;" class="desc_title">{{ item.code }}</p>
+                        <p style="margin:12px ;" class="desc_desc">{{ item.description }}</p>
                     </div>
                 </div>
             </el-card>
@@ -120,18 +119,19 @@ export default {
 }
 
 .el-card {
-    width: 350px;
-    height: 150px;
+    width: 300px;
+    height: 125px;
     margin: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
 }
 
 .el-card__body {
     width: 100%;
     height: 100%;
-    padding: 0 20px;
+    padding: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -147,10 +147,11 @@ export default {
 }
 
 .cardleft {
+    width: 40%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
 }
 
 .emoji {
@@ -158,7 +159,7 @@ export default {
 }
 
 .cardright {
-    width: 100%;
+    width: 60%;
     height: 100%;
     padding: 0;
     display: flex;

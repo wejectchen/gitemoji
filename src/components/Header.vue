@@ -27,7 +27,7 @@ export default {
 .headerBox {
     padding: 0;
     margin: 0;
-    height: 300px;
+    height: 400px;
     background-color: #ffdd68;
     display: flex;
     flex-direction: column;
