@@ -92,7 +92,7 @@ export default {
         const searchEmoji = computed(() => {
             console.log('searchEmoji: ', searchEmoji.value);
             return emoji.filter(
-                emoji => emoji.name.includes(searchData.value)
+                emoji => emoji.name.includes(searchData.value) || emoji.description.includes(searchData.value)
             )
         })
 
