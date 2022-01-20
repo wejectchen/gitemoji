@@ -53,53 +53,41 @@
     </div>
 </template>
 
-<script>
+<script setup>
 
 import { ref, computed } from 'vue'
 import emoji from '../data/emoji'
 
-
-export default {
-    setup() {
-        const emojiList = ref(emoji)
-        const generateMixed = (n) => {
-            var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-            var res = "#";
-            var id;
-            for (var i = 0; i < n; i++) {
-                id = Math.floor(Math.random() * 16);
-                res += chars[id];
-            }
-            return res;
-        }
-        const getColor = function () {
-            return 'background-color:' + generateMixed(6)
-        }
-        const onCopy = () => {
-            ElMessage({
-                showClose: true,
-                message: '已成功复制该表情，快去使用吧～～',
-                type: 'success',
-                center: true,
-            })
-        }
-
-        const searchData = ref('')
-        const searchEmoji = computed(() => {
-            return emoji.filter(
-                emoji => emoji.name.includes(searchData.value) || emoji.description.includes(searchData.value)
-            )
-        })
-
-        return {
-            emojiList,
-            getColor,
-            onCopy,
-            searchData,
-            searchEmoji
-        }
-    },
+const emojiList = ref(emoji)
+const generateMixed = (n) => {
+    var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+    var res = "#";
+    var id;
+    for (var i = 0; i < n; i++) {
+        id = Math.floor(Math.random() * 16);
+        res += chars[id];
+    }
+    return res;
 }
+const getColor = function () {
+    return 'background-color:' + generateMixed(6)
+}
+const onCopy = () => {
+    ElMessage({
+        showClose: true,
+        message: '已成功复制该表情，快去使用吧～～',
+        type: 'success',
+        center: true,
+    })
+}
+
+const searchData = ref('')
+const searchEmoji = computed(() => {
+    return emoji.filter(
+        emoji => emoji.name.includes(searchData.value) || emoji.description.includes(searchData.value)
+    )
+})
+
 
 </script>
 
