@@ -12,12 +12,11 @@
 
 <script setup>
 const gotogitee = function () {
-    // window.location.assign('https://gitee.com/wejectchan/git-emoji-user-guide')
     window.open('https://gitee.com/wejectchan/git-emoji-user-guide')
+
 }
 const gotoiusse = function () {
     window.open('https://gitee.com/wejectchan/git-emoji-user-guide/issues')
-    // window.location.href = 'https://gitee.com/wejectchan/git-emoji-user-guide/issues'
 }
 
 </script>
