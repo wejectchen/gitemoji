@@ -54,9 +54,8 @@
 </template>
 
 <script setup>
-
-import { ref, computed } from 'vue'
-import emoji from '../data/emoji'
+import { computed, ref } from 'vue'
+import emoji from '@/data/emoji'
 
 const emojiList = ref(emoji)
 const generateMixed = (n) => {
