@@ -21,4 +21,7 @@ export default defineConfig({
 		'@': path.resolve(__dirname, 'src'),
 	},
 	base: '/git-emoji-user-guide/',
+	resolve: {
+		alias: { '@': path.resolve(__dirname, 'src') },
+	},
 })

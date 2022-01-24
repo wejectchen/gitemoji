@@ -54,7 +54,8 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+
+import { ref, computed } from 'vue'
 import emoji from '@/data/emoji'
 
 const emojiList = ref(emoji)
@@ -83,7 +84,7 @@ const onCopy = () => {
 const searchData = ref('')
 const searchEmoji = computed(() => {
     return emoji.filter(
-        emoji => emoji.name.includes(searchData.value) || emoji.description.includes(searchData.value)
+        emoji => emoji.emoji.includes(searchData.value) || emoji.description.includes(searchData.value) || emoji.name.includes(searchData.value)
     )
 })
 
@@ -92,7 +93,7 @@ const searchEmoji = computed(() => {
 
 <style>
 :root {
-    --el-color-primary: #464646;
+    --el-color-primary: #ddeef7;
 }
 
 .mainContainer {
@@ -114,6 +115,8 @@ const searchEmoji = computed(() => {
     height: 55px !important;
     color: #090909;
     border-radius: 0.5em;
+    font-size: 16px;
+    text-align: center;
     background: #ffffff;
     border: 1px solid #e8e8e8;
     transition: all 0.3s;

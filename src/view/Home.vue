@@ -5,8 +5,8 @@
     </el-main>
 
     <div class="footer">
-        <p style="padding: 6px;">Made With ❤️ By wejectchan</p>
-        <p style="padding: 6px;">
+        <p style="padding: 8px;">Made With 🧡💗💖💝 By wejectchan</p>
+        <p>
             <el-link
                 href="https://github.com/carloscuesta/gitmoji"
                 :underline="false"
@@ -14,7 +14,7 @@
                 type="info"
             >Fork from gitmoji@github under the MIT license</el-link>
         </p>
-        <p style="padding: 6px;">
+        <p>
             <el-link
                 href="https://github.com/hooj0/git-emoji-guide"
                 :underline="false"
@@ -44,6 +44,7 @@ import Header from '@/components/Header.vue'
     background-color: #464646;
     text-align: center;
     color: aliceblue;
+    padding: 8px;
 }
 
 p {
