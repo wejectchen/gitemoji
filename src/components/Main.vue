@@ -54,11 +54,11 @@
 </template>
 
 <script setup>
-
 import { ref, computed } from 'vue'
 import emoji from '@/data/emoji'
 
 const emojiList = ref(emoji)
+
 const generateMixed = (n) => {
     var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
     var res = "#";
@@ -72,22 +72,24 @@ const generateMixed = (n) => {
 const getColor = function () {
     return 'background-color:' + generateMixed(6)
 }
+
+// 点击复制模块
 const onCopy = () => {
     ElMessage({
         showClose: true,
-        message: '已成功复制该表情，快去使用吧～～',
+        message: '已成功复制该表情，快去使用吧～',
         type: 'success',
         center: true,
     })
 }
 
+// 搜索功能模块
 const searchData = ref('')
 const searchEmoji = computed(() => {
     return emoji.filter(
-        emoji => emoji.emoji.includes(searchData.value) || emoji.description.includes(searchData.value) || emoji.name.includes(searchData.value)
+        item => item.emoji.includes(searchData.value) || item.description.includes(searchData.value) || item.name.includes(searchData.value)
     )
 })
-
 
 </script>
 

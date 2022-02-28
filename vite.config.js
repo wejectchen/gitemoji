@@ -17,11 +17,13 @@ export default defineConfig({
 			resolvers: [ElementPlusResolver()],
 		}),
 	],
-	alias: {
-		'@': path.resolve(__dirname, 'src'),
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, 'src'),
+		},
 	},
 	base: '/git-emoji-user-guide/',
-	resolve: {
-		alias: { '@': path.resolve(__dirname, 'src') },
+	server: {
+		port: 8080,
 	},
 })
