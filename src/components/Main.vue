@@ -1,24 +1,13 @@
 <template>
     <div class="mainContainer">
         <div class="searchBox">
-            <el-input
-                v-model="searchData"
-                class="searchBar"
-                clearable
-                size="large"
-                suffix-icon="Search"
-                placeholder="输入查找emoji"
-            ></el-input>
+            <el-input v-model="searchData" class="searchBar" clearable size="large"
+                suffix-icon="Search" placeholder="输入查找emoji"></el-input>
         </div>
 
         <div class="mainBox" v-if="!searchEmoji">
-            <el-card
-                v-clipboard:copy="item.emoji"
-                v-clipboard:success="onCopy"
-                shadow="always"
-                v-for="(item, index) in emojiList"
-                :key="index"
-            >
+            <el-card v-clipboard:copy="item.emoji" v-clipboard:success="onCopy" shadow="always"
+                v-for="(item, index) in emojiList" :key="index">
                 <div class="cardleft" :style="getColor()">
                     <div class="emoji">{{ item.emoji }}</div>
                 </div>
@@ -32,13 +21,8 @@
         </div>
 
         <div class="mainBox" v-else>
-            <el-card
-                v-clipboard:copy="item.emoji"
-                v-clipboard:success="onCopy"
-                shadow="always"
-                v-for="(item, index) in searchEmoji"
-                :key="index"
-            >
+            <el-card v-clipboard:copy="item.emoji" v-clipboard:success="onCopy" shadow="always"
+                v-for="(item, index) in searchEmoji" :key="index">
                 <div class="cardleft" :style="getColor()">
                     <div class="emoji">{{ item.emoji }}</div>
                 </div>
@@ -54,8 +38,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import emoji from '@/data/emoji'
+import { computed, ref } from 'vue';
+import emoji from '../data/emoji';
 
 const emojiList = ref(emoji)
 
@@ -113,7 +97,7 @@ const searchEmoji = computed(() => {
     max-width: 800px;
 }
 
-.el-input__inner {
+.el-input__wrapper {
     height: 55px !important;
     color: #090909;
     border-radius: 0.5em;
@@ -123,6 +107,11 @@ const searchEmoji = computed(() => {
     border: 1px solid #e8e8e8;
     transition: all 0.3s;
     box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.el-input__inner {
+    font-size: 16px;
+    text-align: center;
 }
 
 .el-card {

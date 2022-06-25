@@ -7,27 +7,20 @@
     <div class="footer">
         <p style="padding: 8px;">Made With 🧡💗💖💝 By wejectchan</p>
         <p>
-            <el-link
-                href="https://github.com/carloscuesta/gitmoji"
-                :underline="false"
-                target="_blank"
-                type="info"
-            >Fork from gitmoji@github under the MIT license</el-link>
+            <el-link href="https://github.com/carloscuesta/gitmoji" :underline="false"
+                target="_blank" type="info">Fork from gitmoji@github under the MIT license</el-link>
         </p>
         <p>
-            <el-link
-                href="https://github.com/hooj0/git-emoji-guide"
-                :underline="false"
-                target="_blank"
-                type="info"
-            >Translate by hooj0/git-emoji-guide@github under the Apache License 2.0</el-link>
+            <el-link href="https://github.com/hooj0/git-emoji-guide" :underline="false"
+                target="_blank" type="info">Translate by hooj0/git-emoji-guide@github under the
+                Apache License 2.0</el-link>
         </p>
     </div>
 </template>
 
 <script setup>
-import Main from '@/components/Main.vue'
-import Header from '@/components/Header.vue'
+import Header from '../components/Header.vue';
+import Main from '../components/Main.vue';
 
 </script>
 
