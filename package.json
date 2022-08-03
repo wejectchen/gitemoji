@@ -8,13 +8,13 @@
 	},
 	"dependencies": {
 		"@soerenmartius/vue3-clipboard": "^0.1.2",
-		"element-plus": "^2.2.6",
+		"element-plus": "^2.2.12",
 		"vue": "^3.2.37"
 	},
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^2.3.3",
-		"unplugin-auto-import": "^0.9.1",
+		"unplugin-auto-import": "^0.9.5",
 		"unplugin-vue-components": "^0.19.9",
-		"vite": "^2.9.12"
+		"vite": "^3.0.4"
 	}
 }
