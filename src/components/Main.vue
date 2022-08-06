@@ -13,8 +13,12 @@
                 </div>
                 <div class="cardright">
                     <div class="desc">
-                        <p style="margin:12px;" class="desc_title">{{ item.code }}</p>
-                        <p style="margin:12px ;" class="desc_desc">{{ item.description }}</p>
+                        <p style="margin: 12px" class="desc_title">
+                            {{ item.code }}
+                        </p>
+                        <p style="margin: 12px" class="desc_desc">
+                            {{ item.description }}
+                        </p>
                     </div>
                 </div>
             </el-card>
@@ -28,8 +32,12 @@
                 </div>
                 <div class="cardright">
                     <div class="desc">
-                        <p style="margin:12px;" class="desc_title">{{ item.code }}</p>
-                        <p style="margin:12px ;" class="desc_desc">{{ item.description }}</p>
+                        <p style="margin: 12px" class="desc_title">
+                            {{ item.code }}
+                        </p>
+                        <p style="margin: 12px" class="desc_desc">
+                            {{ item.description }}
+                        </p>
                     </div>
                 </div>
             </el-card>
@@ -38,20 +46,36 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
-import emoji from '../data/emoji';
+import emoji from '@/data/emoji.js'
 
 const emojiList = ref(emoji)
 
 const generateMixed = (n) => {
-    var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-    var res = "#";
-    var id;
+    var chars = [
+        '0',
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        'A',
+        'B',
+        'C',
+        'D',
+        'E',
+        'F',
+    ]
+    var res = '#'
+    var id
     for (var i = 0; i < n; i++) {
-        id = Math.floor(Math.random() * 16);
-        res += chars[id];
+        id = Math.floor(Math.random() * 16)
+        res += chars[id]
     }
-    return res;
+    return res
 }
 const getColor = function () {
     return 'background-color:' + generateMixed(6)
@@ -71,10 +95,12 @@ const onCopy = () => {
 const searchData = ref('')
 const searchEmoji = computed(() => {
     return emoji.filter(
-        item => item.emoji.includes(searchData.value) || item.description.includes(searchData.value) || item.name.includes(searchData.value)
+        (item) =>
+            item.emoji.includes(searchData.value) ||
+            item.description.includes(searchData.value) ||
+            item.name.includes(searchData.value)
     )
 })
-
 </script>
 
 <style>
