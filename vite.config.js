@@ -8,6 +8,7 @@ import { resolve } from 'path'
 const pathSrc = resolve(__dirname, './src')
 
 // https://vitejs.dev/config/
+/** @type {import('vite').UserConfig} */
 export default defineConfig({
 	resolve: {
 		alias: {
@@ -18,7 +19,7 @@ export default defineConfig({
 		vue(),
 		AutoImport({
 			imports: ['vue'],
-			resolvers: [ElementPlusResolver()],
+			esolvers: [ElementPlusResolver()],
 		}),
 		Components({
 			resolvers: [ElementPlusResolver()],
