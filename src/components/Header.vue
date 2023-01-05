@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script setup>
+<script>
 const gotogitee = function () {
     window.open('https://gitee.com/wejectchan/git-emoji-user-guide')
 
@@ -32,6 +32,7 @@ const gotoiusse = function () {
     justify-content: center;
     align-items: center;
 }
+
 .headerTitle {
     font-size: 16.5px;
     font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,

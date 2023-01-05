@@ -47,6 +47,8 @@
 
 <script setup>
 import emoji from '@/data/emoji.js'
+import { ElMessage } from 'element-plus'
+import 'element-plus/theme-chalk/el-message.css'
 
 const emojiList = ref(emoji)
 
